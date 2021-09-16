@@ -36,6 +36,6 @@ def tweet():
 def main():
     while True:
         tweet()
-        time.sleep(43200)
+        time.sleep(18000)
 if __name__ == "__main__":
     main()
