@@ -2,7 +2,11 @@ import time
 
 import tweepy
 
-from credentials import consumer_key, consumer_key_secret, access_token, access_token_secret
+from os import environ
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
 
 
 def tweet():
@@ -21,11 +25,11 @@ def tweet():
 
     file.close()
 
-    auth = tweepy.OAuthHandler(consumer_key, consumer_key_secret)
+    auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 
-    auth.set_access_token(access_token, access_token_secret)
+    auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 
-    api = tweepy.API(auth);
+    api = tweepy.API(auth)
 
     api.update_status(msg)
 
