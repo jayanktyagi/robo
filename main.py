@@ -3,6 +3,7 @@ import time
 import tweepy
 
 from os import environ
+
 CONSUMER_KEY = environ['CONSUMER_KEY']
 CONSUMER_SECRET = environ['CONSUMER_SECRET']
 ACCESS_KEY = environ['ACCESS_KEY']
@@ -21,7 +22,7 @@ def tweet():
                 msg = line
                 print(line)
             if i != 0:
-                fp.write(line+"\n")
+                fp.write(line + "\n")
 
     file.close()
 
@@ -33,9 +34,12 @@ def tweet():
 
     api.update_status(msg)
 
+
 def main():
     while True:
         tweet()
-        time.sleep(18000)
+        time.sleep(14400)
+
+
 if __name__ == "__main__":
     main()
