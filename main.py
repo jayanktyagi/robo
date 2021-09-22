@@ -43,14 +43,14 @@ def get_tweet():
     for i, line in enumerate(tweet_list):
         if line == last_tweet:
             idx = i + 1
-
+    if len(tweet_list[idx]) > 280:
+        idx = idx + 1
     return tweet_list[idx]
 
 
 def tweet():
     api = authenticate()
     msg = get_tweet()
-
     print(msg)
     api.update_status(msg)
 
