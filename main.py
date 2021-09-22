@@ -4,17 +4,16 @@ import tweepy
 
 from os import environ
 
-# CONSUMER_KEY = environ['CONSUMER_KEY']
-# CONSUMER_SECRET = environ['CONSUMER_SECRET']
-# ACCESS_KEY = environ['ACCESS_KEY']
-# ACCESS_SECRET = environ['ACCESS_SECRET']
-import credentials
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
 
 
 def authenticate():
-    auth = tweepy.OAuthHandler(credentials.consumer_key, credentials.consumer_key_secret)
+    auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 
-    auth.set_access_token(credentials.access_token, credentials.access_token_secret)
+    auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 
     api = tweepy.API(auth)
 
