@@ -52,7 +52,7 @@ def tweet():
     msg = get_tweet()
 
     print(msg)
-    # api.update_status(msg)
+    api.update_status(msg)
 
 
 def main():
