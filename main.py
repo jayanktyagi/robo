@@ -24,7 +24,6 @@ def getLastTweet():
     api = authenticate()
 
     self_id = api.me().id
-
     fetch_tweet = api.user_timeline(id=self_id, count=1, tweet_mode="extended")[0]
     last_tweet = fetch_tweet.full_text
 
@@ -53,6 +52,7 @@ def tweet():
     msg = get_tweet()
     print(msg)
     api.update_status(msg)
+
 
 
 def main():
